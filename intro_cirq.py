@@ -19,3 +19,13 @@ for q in qubits:
 	
 
 print(quantum_circuit)
+
+
+def rot_x_gate(length, half_turns):
+	rot = cirq.XPowGate(exponent=half_turns)
+	for i in range(length):
+		for j in range(length):
+			yield rot(cirq.GridQubit(i, j))
+
+quantum_circuit.append(rot_x_gate(3, 0.1))
+print(quantum_circuit)
