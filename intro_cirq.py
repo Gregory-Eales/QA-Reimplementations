@@ -1,10 +1,11 @@
 import cirq
 
 # define the circuit length
-length = 4
+length = 10
+width = 2
 
 # define qubits and store them in list
-qubits = [cirq.GridQubit(i, j) for i in range(length) for j in range(length)]
+qubits = [cirq.GridQubit(i, j) for i in range(length) for j in range(width)]
 #print(qubits)
 
 # define quantum circuit
