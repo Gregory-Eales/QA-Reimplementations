@@ -22,6 +22,7 @@ class quantum_weights(object):
 		print("multiplication")
 
 
-x = quantum_weights(10, 10)
+class quantum_number(self):
 
-x*1
+	def __init__(self, whole_place, decimal_place):
+		pass
