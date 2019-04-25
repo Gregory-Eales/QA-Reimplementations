@@ -26,3 +26,9 @@ class quantum_number(self):
 
 	def __init__(self, whole_place, decimal_place):
 		pass
+
+	def carry_the_one(self, n_place):
+		pass
+
+	def set_zero(self):
+		pass
