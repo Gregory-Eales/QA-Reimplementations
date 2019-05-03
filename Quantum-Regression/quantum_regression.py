@@ -45,7 +45,12 @@ class quantum_number(object):
 		pass
 
 	def decimal_to_binary(self, x):
-		pass
+		x = str(x)
+
+		if "." in x:
+			whole, fractional = x.split(".")
+
+			print(whole, fractional)
 
 
 
@@ -56,4 +61,3 @@ class quantum_number(object):
 
 
 
-		
