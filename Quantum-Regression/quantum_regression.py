@@ -1,9 +1,17 @@
 import cirq
 
+class QuantumRegressor(object):
+
+	def __init__(self, length, width):
+		self.weights = quantum_weights()
+
+	def fit(self, x, y, alpha, iterations):
+		pass
+
 
 class quantum_weights(object):
 
-	def __init__(self, length, witdh):
+	def __init__(self, length, witdth):
 		self.length = length
 		self.width = width
 		self.qubits = init_qubits(length, width)
@@ -22,7 +30,7 @@ class quantum_weights(object):
 		print("multiplication")
 
 
-class quantum_number(self):
+class quantum_number(object):
 
 	def __init__(self, whole_place, decimal_place):
 		pass
