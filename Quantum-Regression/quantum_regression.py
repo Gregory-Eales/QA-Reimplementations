@@ -6,6 +6,9 @@ class QuantumRegressor(object):
 		self.weights = quantum_weights()
 
 	def fit(self, x, y, alpha, iterations):
+		self.quant_x = self.quantize(x)
+
+	def quantize(self):
 		pass
 
 
@@ -40,3 +43,17 @@ class quantum_number(object):
 
 	def set_zero(self):
 		pass
+
+	def decimal_to_binary(self, x):
+		pass
+
+
+
+
+
+
+
+
+
+
+		
