@@ -1,15 +1,9 @@
 import cirq
 
 
-class QuantumRegressor(object):
-
-	def __init__(self):
-		pass
-
-
 class quantum_weights(object):
 
-	def __init__(self, length, witdth):
+	def __init__(self, length, witdh):
 		self.length = length
 		self.width = width
 		self.qubits = init_qubits(length, width)
