@@ -33,7 +33,7 @@ class quantum_weights(object):
 		print("multiplication")
 
 
-class quantum_number(object):
+class QuantumNumber(object):
 
 	def __init__(self, whole_place, decimal_place):
 		pass
@@ -49,8 +49,29 @@ class quantum_number(object):
 
 		if "." in x:
 			whole, fractional = x.split(".")
-
 			print(whole, fractional)
+
+		else:
+			whole = int(x)
+
+		binary_whole = []
+		searching = True
+		place = 1
+		while searching:
+
+			if whole % 2**place == 0:
+				binary_whole.append(0)
+
+			else:
+				binary_whole.append(1)
+				whole = whole - 2**(place-1)
+
+			if whole == 0 or place > 10:
+				searching = False
+
+			place = place + 1
+
+		return binary_whole, whole
 
 
 
