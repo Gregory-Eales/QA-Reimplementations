@@ -3,7 +3,7 @@ import cirq
 class QuantumRegressor(object):
 
 	def __init__(self, length, width):
-		self.weights = quantum_weights()
+		self.weights = QuantumWeights()
 
 	def fit(self, x, y, alpha, iterations):
 		self.quant_x = self.quantize(x)
@@ -12,7 +12,7 @@ class QuantumRegressor(object):
 		pass
 
 
-class quantum_weights(object):
+class QuantumWeights(object):
 
 	def __init__(self, length, witdth):
 		self.length = length
