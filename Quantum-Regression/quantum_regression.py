@@ -49,7 +49,7 @@ class QuantumNumber(object):
 
 		if "." in x:
 			whole, fractional = x.split(".")
-			print(whole, fractional)
+			whole, fractional = int(whole), float("0."+fractional)
 
 		else:
 			whole = int(x)
@@ -71,7 +71,26 @@ class QuantumNumber(object):
 
 			place = place + 1
 
-		return binary_whole, whole
+		
+		binary_fractional = []
+		searching = True
+		place = -1
+		while searching:
+
+			if fractional % 2**place == 0:
+				binary_fractional.append(0)
+
+			else:
+				binary_fractional.append(1)
+				fractional = fractional - 2**(place-1)
+
+			if fractional == 0 or place < -10:
+				searching = False
+
+			place = place - 1
+		
+
+		return binary_whole, binary_fractional 
 
 
 
