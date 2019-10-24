@@ -3,10 +3,10 @@ import cirq
 class VariationalMethod(object):
 
     """
-    implemented tutorial from the circ docs
+    implemented tutorial from the cirq docs
 
     used in finding low energy states of quantum systems
-    applicable in minimizing any obejective function
+    applicable in minimizing obejective functions
     """
 
     def __init__(self):
@@ -21,10 +21,18 @@ class VariationalMethod(object):
 
     def populate_circuit(self):
 
-        for q in qubits:
+        for q in self.qubits:
             if (q.row + q.col) % 2 == 0:
                 self.circuit.append(cirq.H(q))
 
-        for q in qubits:
+        for q in self.qubits:
             if (q.row + q.col) % 2 == 1:
                 self.circuit.append(cirq.X(q))
+
+
+def main():
+    vr = VariationalMethod()
+    print(vr.circuit)
+
+if __name__ == "__main__":
+    main()
