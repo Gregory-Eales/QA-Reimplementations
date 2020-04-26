@@ -1,3 +1,7 @@
+import sys
+print(sys.version)
+
+
 import qsharp
 
 from qsharp import Result
