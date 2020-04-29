@@ -6,11 +6,18 @@ namespace HelloWorld
 
     operation SayHello() : Result
     {
-        Message("Hello from quantum world!");
-
-        using(q = Qubit())
+        using(q=Qubit())
         {
             DumpMachine();
+
+            X(q);
+            Message("Apply the X Gate:");
+            DumpMachine();
+
+            H(q);
+            Message("Apply the Hadmard Gate:");
+            DumpMachine();
+
         }
         return Zero;
     }
