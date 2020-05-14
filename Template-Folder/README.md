@@ -13,8 +13,7 @@
   <a href="#About">About</a> •
   <a href="#Requirements">Requirements</a> •
   <a href="#Algorithm">Algorithm</a> •
-  <a href="#Environment">Environment</a> •
-  <a href="#Training">Training</a> •
+  <a href="#Implementation">Implementationt</a> •
   <a href="#Results">Results</a> •
   <a href="#Sources">Sources</a>
 </p>
@@ -30,17 +29,12 @@
 - show pseudocode
 - explain implementation details
 
-## Environment:
-- explain the environment and/or data
+## Implementation:
+- explain the data and the goal
 - show screenshots/tables/plots
 
-## Training:
-- explain training methods
-- plot accuracy and loss through training
-
 ## Results:
-- show end result accuracy 
-- show prediction plot
+- show end result 
 - include closing thoughts + improvements
 
 ## Sources:
