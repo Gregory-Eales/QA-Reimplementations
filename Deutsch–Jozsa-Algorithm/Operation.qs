@@ -1,45 +1,47 @@
 namespace DeutschJozsa {
     open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Canon;
+    //open Microsoft.Quantum.Diagnostics;
 
     operation SayHello() : Unit
     {
         Message("Hello from quantum world!");
     }
 
-    operation Zero_Oracle(x: Qubit[], y:Qubit): Unit
+    
+    operation Zero_Oracle(x: Qubit[], y:Qubit) : Unit
     {
-        """
-        always returns zero
-        """
+        
+        //always returns zero
+    
     }
-
-    operation One_Oracle(x: Qubit[], y:Qubit): Unit
+    
+    operation One_Oracle(x: Qubit[], y: Qubit): Unit
     {
-        """
-        always returns one
-        """
+        
+        //always returns one
+        
         X(y);
     }
-
+    
     operation Kth_Qubit_Oracle(x: Qubit[], y: Qubit, k: Int): Unit
     {
-        """
-        returns the state of the kth qubit
-        """
+        
+        //returns the state of the kth qubit
+        
         H(y);
         H(x[k]);
         CNOT(y, x[k]);
         H(y);
         H(x[k]);
     }
+    
 
-
-    operation Deutsch_Jozsa(N: Int, oracle: ((Qubit[], Qubit) => Unit) ) : Bool
+    operation Deutsch_Jozsa(N: Int, oracle : ((Qubit[], Qubit) => Unit) ) : Bool
     {
         mutable isConstant = true;
 
-        using((x, y) = (Qubit[N], Qubit) )
+        using((x, y) = (Qubit[N], Qubit()) )
         {
 
             // put all x into super position
@@ -72,4 +74,5 @@ namespace DeutschJozsa {
         // return result
         return isConstant;
     }
+    
 }
