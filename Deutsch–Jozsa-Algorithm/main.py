@@ -1,8 +1,8 @@
-import qsharp
+﻿import qsharp
 
-from DeutschJozsa import SayHello, Zero_Oracle, Deutsch_Jozsa
+from DeutschJozsa import SayHello, RunDeutschJozsa
 
 SayHello.simulate()
 
-Deutsch_Jozsa.simulate(N=10, oracle=Zero_Oracle)
+RunDeutschJozsa.simulate(N=10)
 

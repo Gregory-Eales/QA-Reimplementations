@@ -11,8 +11,6 @@ namespace DeutschJozsa {
     
     operation Zero_Oracle(x: Qubit[], y:Qubit) : Unit
     {
-        
-        //always returns zero
     
     }
     
@@ -35,9 +33,9 @@ namespace DeutschJozsa {
         H(y);
         H(x[k]);
     }
-    
 
-    operation Deutsch_Jozsa(N: Int, oracle : ((Qubit[], Qubit) => Unit) ) : Bool
+
+    operation Deutsch_Jozsa(N: Int, oracle: ((Qubit[], Qubit) => Unit)) : Bool
     {
         mutable isConstant = true;
 
@@ -73,6 +71,32 @@ namespace DeutschJozsa {
 
         // return result
         return isConstant;
+    }
+
+    operation RunDeutschJozsa(N:Int) : String
+    {
+        mutable IsConstant = " is constant";
+        mutable IsBalanced = " is balanced";
+
+        if (Deutsch_Jozsa(N, Zero_Oracle))
+        {
+            Message("The Zero Oracle"+IsConstant);
+        }
+        else
+        {
+            Message("The Zero Oracle"+IsBalanced);
+        }
+
+        if (Deutsch_Jozsa(N, One_Oracle))
+        {
+            Message("The One Oracle"+IsConstant);
+        }
+        else
+        {
+            Message("The One Oracle"+IsBalanced);
+        }
+
+        return "Complete";
     }
     
 }
