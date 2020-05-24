@@ -19,14 +19,19 @@
 </p>
 
 ## About:
-- overview of the algorithm and its implementation 
+This is an implementation of the Deutsch Jozsa algorithm using Q# and python3
 
 ## Requirements:
-- include required libraries and versions
+- Q# programming langauge
+- Python3.8
 
 ## Algorithm:
-- explain algorithm overview
-- show pseudocode
+
+The Deutsch Jozsa algorithms uses a black box quantum oracle to map a binary vector of length n to either a 1 or a 0. The goal of the algorithm is to determine if the function is constant (returns either all 1 or all 0) or the function is balanced (returns 1 and 0 equally).
+
+<p>
+  <img src="img/Deutsch-Jozsa-algorithm-quantum-circuit.png">
+</p>
 - explain implementation details
 
 ## Implementation:
