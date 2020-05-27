@@ -10,4 +10,14 @@ namespace GroversAlgorithm
         Message("Hello Quantum!");
         return 0;
     }
+
+
+    operation Oracle(N:Int) : Result[]
+    {
+        using (qubits = Qubit[N])
+        {
+
+            
+        }
+    }
 }
