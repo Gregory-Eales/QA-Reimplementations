@@ -32,7 +32,7 @@ namespace GroversAlgorithm
             // apply reflection on qubits NumIter times
             for(i in 0 .. NumIter)
             {
-
+                
             }
 
         }
