@@ -7,6 +7,8 @@ namespace GroversAlgorithm
     open Microsoft.Quantum.Math;
     open Microsoft.Quantum.Arrays;
 
+    
+
 
     operation HelloWorld() : Int
     {
@@ -14,8 +16,23 @@ namespace GroversAlgorithm
         return 0;
     }
 
+ 
+    operation ReflectAboutAllOnes(inputQubits : Qubit[]) : Unit {
+        Controlled Z(Most(inputQubits), Tail(inputQubits));
+    }
+
+
+    operation PrepareUniform(inputQubits : Qubit[]) : Unit is Adj + Ctl {
+        ApplyToEachCA(H, inputQubits);
+    }
+
+   
+    operation PrepareAllOnes(inputQubits : Qubit[]) : Unit is Adj + Ctl {
+        ApplyToEachCA(X, inputQubits);
+    }
+
     // gets the number of times to apply grover
-    function GetIterations(NumQubits : Int) : Int
+    function GetIterations(nQubits : Int) : Int
     {
         let nItems = 1 <<< nQubits;
         let angle = ArcSin(1. / Sqrt(IntAsDouble(nItems)));
@@ -41,11 +58,11 @@ namespace GroversAlgorithm
     {
         within
         {
-            Adjoint PrepareUniform(inputQubits);
-            PrepareAllOnes(inputQubits);
+            Adjoint PrepareUniform(x);
+            PrepareAllOnes(x);
         }apply
         {
-            ReflectAboutAllOnes(inputQubits);
+            ReflectAboutAllOnes(x);
         }
     }
 
@@ -53,7 +70,7 @@ namespace GroversAlgorithm
     operation GroversAlgorithm(N:Int) : Result[]
     {
         // define number of applications
-        let NumIter = GetIterations();
+        let NumIter = GetIterations(N);
 
         using (qubits = Qubit[N])
         {
