@@ -1,7 +1,7 @@
 import qsharp
 
 
-from GroversAlgorithm import HelloWorld
+from GroversAlgorithm import GroversAlgorithm
 
 
-HelloWorld.simulate()
+print(GroversAlgorithm.simulate(N=10))
