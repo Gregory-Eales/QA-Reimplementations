@@ -3,18 +3,32 @@ namespace BernsteinVazirani {
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Math;
     open Microsoft.Quantum.Arrays;
-    
+    open Microsoft.Quantum.Convert;
+    open Microsoft.Quantum.Measurement;
+
+
+    operation GenerateRandomBit() : Result
+    {
+        using (q = Qubit())
+        {
+            H(q);               
+            return MResetZ(q);
+        }   
+    }
 
     // generate size n secret bit string
     function GenerateSecretString(N : Int) : Int[] {
 
         // init array
+        let secret = [0];
 
         for (i in 0 .. N)
         {
             // generate random bit and add to array
-            
+            secret[i] = GenerateRandomBit();
         }
+
+        return secret;
     }
     
     operation ApplyUniform(target : Qubit[]) : Unit
@@ -36,7 +50,7 @@ namespace BernsteinVazirani {
 
         // put qubits into super position
 
-        // iterate until secret string is recreated  
+        // iterate until secret string is reacreated  
     }
 
 }
