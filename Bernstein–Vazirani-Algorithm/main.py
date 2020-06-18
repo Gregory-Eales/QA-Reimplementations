@@ -3,11 +3,11 @@ import random
 
 
 def make_oracle(input_qubits, output_qubit, x_bits):
-    yield(cirq.X(q) for (q, bit) in zip(input_qubits, x_bits) if not bit)
-    yield(cirq.X(q) for (q, bit) in zip(input_qubits, x_bits) if not bit)
+    yield(cirq.CNOT(q, output_qubit) for (q, bit) in zip(input_qubits, x_bits) if bit)
+    yield(cirq.I(q) for (q, bit) in zip(input_qubits, x_bits) if not bit)
 
 
-def set_io_qubits(num_qubits=3):
+def set_io_qubits(num_qubits=10):
 
 	input_qubits = [cirq.GridQubit(i, 0) for i in range(num_qubits)]
 	output_qubit = cirq.GridQubit(num_qubits, 0)
@@ -40,7 +40,7 @@ def make_bv_circuit(input_qubits, output_qubit, oracle):
 #print(cirq.GridQubit(10, 0))
 
 
-x_bits = [random.randint(0, 1) for _ in range(3)]
+x_bits = [random.randint(0, 1) for _ in range(10)]
 print(x_bits)
 input_qubits, output_qubit = set_io_qubits()
 oracle = make_oracle(input_qubits, output_qubit, x_bits)
