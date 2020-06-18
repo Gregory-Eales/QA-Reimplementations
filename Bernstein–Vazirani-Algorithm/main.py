@@ -4,7 +4,6 @@ import random
 
 def make_oracle(input_qubits, output_qubit, x_bits):
     yield(cirq.X(q) for (q, bit) in zip(input_qubits, x_bits) if not bit)
-    yield(cirq.TOFFOLI(input_qubits[0], input_qubits[1], output_qubit))
     yield(cirq.X(q) for (q, bit) in zip(input_qubits, x_bits) if not bit)
 
 
@@ -42,6 +41,7 @@ def make_bv_circuit(input_qubits, output_qubit, oracle):
 
 
 x_bits = [random.randint(0, 1) for _ in range(3)]
+print(x_bits)
 input_qubits, output_qubit = set_io_qubits()
 oracle = make_oracle(input_qubits, output_qubit, x_bits)
 circuit = make_bv_circuit(input_qubits, output_qubit, oracle)
