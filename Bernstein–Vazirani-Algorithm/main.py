@@ -41,10 +41,11 @@ def make_bv_circuit(input_qubits, output_qubit, oracle):
 
 
 x_bits = [random.randint(0, 1) for _ in range(10)]
-print(x_bits)
 input_qubits, output_qubit = set_io_qubits()
 oracle = make_oracle(input_qubits, output_qubit, x_bits)
 circuit = make_bv_circuit(input_qubits, output_qubit, oracle)
 simulator = cirq.Simulator()
+result = simulator.run(circuit, repetitions=1)
 
-print(circuit)
+print(x_bits)
+print(result)
