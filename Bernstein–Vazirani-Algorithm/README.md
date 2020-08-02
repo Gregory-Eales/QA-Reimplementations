@@ -19,15 +19,15 @@
 </p>
 
 ## About:
-- overview of the algorithm and its implementation 
+The Bernstein-Vazirani algorithm is a constrained version of the Deutch-Jozsa algorithm that uses a single type of oracle. This orcale performs a dot product with an input string and an interal string of the same length producing either a 1 or a 0 by applying a modulo 2. This means the oracle is telling you whether the result of the dot product is either even or odd. This algorithms solves the problem of finding hidden string.
 
 ## Requirements:
-- include required libraries and versions
+- cirq
+- python 3
 
 ## Algorithm:
-- explain algorithm overview
-- show pseudocode
-- explain implementation details
+
+<img src="https://render.githubusercontent.com/render/math?math=f{0, 1}^{n} \gets {0, 1}">
 
 ## Implementation:
 - explain the data and the goal
