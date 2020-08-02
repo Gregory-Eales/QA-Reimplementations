@@ -27,7 +27,7 @@ The Bernstein-Vazirani algorithm is a constrained version of the Deutch-Jozsa al
 
 ## Algorithm:
 
- The oracle used in this algorithm gives <img src="https://render.githubusercontent.com/render/math?math=\large f\{0, 1\}^{n} \rightarrow \{0, 1\}"> by using a dot product with a hidden string. 
+ The oracle used in this algorithm gives <img src="https://render.githubusercontent.com/render/math?math= f\{0, 1\}^{n} \rightarrow \{0, 1\}"> by using a dot product with a hidden string. 
 
 ## Implementation:
 - explain the data and the goal
