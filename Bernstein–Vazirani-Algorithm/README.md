@@ -27,7 +27,7 @@ The Bernstein-Vazirani algorithm is a constrained version of the Deutch-Jozsa al
 
 ## Algorithm:
 
-<img src="https://render.githubusercontent.com/render/math?math=f{0, 1}^{n} \gets {0, 1}">
+<img src="https://render.githubusercontent.com/render/math?math=f\{0, 1\}^{n} \rigtharrow \{0, 1\}">
 
 ## Implementation:
 - explain the data and the goal
