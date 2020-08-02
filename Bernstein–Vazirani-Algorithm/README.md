@@ -31,6 +31,12 @@ The Bernstein-Vazirani algorithm is a constrained version of the Deutch-Jozsa al
 
 <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/bff660e62e6a060c9f1a275fc8bc8c34a12264fe">
 
+<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e97fee904c19e4fea87ec50004d2ae85626963f8">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Bernstein-Vazirani_algorithm_scheme.svg/2232px-Bernstein-Vazirani_algorithm_scheme.svg.png">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Bernstein-Vazirani_quantum_circuit.png/440px-Bernstein-Vazirani_quantum_circuit.png">
+
 
 ## Implementation:
 - explain the data and the goal
