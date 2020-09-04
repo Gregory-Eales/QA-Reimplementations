@@ -25,7 +25,7 @@ def make_bv_circuit(input_qubits, output_qubit, oracle):
 	circuit.append(cirq.H.on_each(*input_qubits))
 
 
-	# apply orracle
+	# apply oracle
 	circuit.append(oracle)
 
 	# take out of superpositon
